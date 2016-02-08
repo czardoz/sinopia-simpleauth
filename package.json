@@ -1,0 +1,9 @@
+{
+  "name": "sinopia-simpleauth",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "keywords": ["sinopia", "auth"],
+  "author": "Aniket Panse <aniket@getpostman.com>",
+  "license": "ISC"
+}
