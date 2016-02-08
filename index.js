@@ -32,7 +32,7 @@ Auth.prototype.authenticate = function (username, password, done) {
     if (this.users[username] && this.users[username] === password) {
       return done(null, [username]);
     }
-    this.logger.warn('SimpleAuth failed for user: ' + username);
+    this.logger.info('SimpleAuth failed for user: ' + username);
     return done(null, false);
 };
 
