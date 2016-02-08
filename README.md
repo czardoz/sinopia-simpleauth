@@ -11,7 +11,7 @@ Add to your `config.yaml`:
 
 ```yaml
 auth:
-  simple:
+  simpleauth:
     alice: alicepassword
     bob: bobpassword
 ```
