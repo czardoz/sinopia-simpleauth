@@ -33,11 +33,13 @@ Auth.prototype.authenticate = function (username, password, done) {
       return done(null, [username]);
     }
     this.logger.log('Auth failed for user: ' + username);
-    return done(new Error('User not found'));
+    return done(null, false);
 };
 
 Auth.prototype.add_user = function (username, password, done) {
-    this.authenticate.apply(this, arguments);
+    return done(null, false); // registration is not allowed
 };
+
+Auth.prototype.adduser = Auth.prototype.add_user; // Backwards compat.
 
 module.exports = Auth;
