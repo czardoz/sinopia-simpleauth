@@ -32,12 +32,12 @@ Auth.prototype.authenticate = function (username, password, done) {
     if (this.users[username] && this.users[username] === password) {
       return done(null, [username]);
     }
-    this.logger.log('Auth failed for user: ' + username);
+    this.logger.warn('SimpleAuth failed for user: ' + username);
     return done(null, false);
 };
 
 Auth.prototype.add_user = function (username, password, done) {
-    return done(null, false); // registration is not allowed
+    this.authenticate.apply(this, arguments); // registration just authentication
 };
 
 Auth.prototype.adduser = Auth.prototype.add_user; // Backwards compat.
